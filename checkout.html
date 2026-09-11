@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Checkout — Sketch Cafe by Apollo Sindoori</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+<!-- Site Navigation -->
+<header class="site-header">
+<div class="header-container">
+<a class="brand" href="#">
+<span class="brand-title">☕ Sketch Cafe</span>
+<span class="brand-subtitle">Sketch Cafe by Apollo Sindoori</span>
+</a>
+<nav>
+<ul class="nav-links">
+<li class=""><a href="#" class="">Home</a></li>
+<li class=""><a href="#" class="">Menu</a></li>
+<li class=""><a href="#" class="">Contact</a></li>
+</ul>
+</nav>
+<div class="header-actions">
+<a aria-label="Shopping Cart" class="cart-btn" href="#">
+<span class="material-symbols-outlined" style="font-size: 22px;">shopping_bag</span>
+<span class="cart-badge">2</span>
+</a>
+<a class="btn-reserve" href="#">Reserve Table</a>
+<div class="profile-avatar">
+<span class="material-symbols-outlined" style="font-size: 20px;">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="main-content">
+<div class="page-eyebrow">
+<span class="">Artisanal Pickup Order</span>
+<span class="dot"></span>
+<span class="step">Step 2 of 2</span>
+</div>
+<h1 class="page-title">Checkout</h1>
+<p class="page-description">Fill in your details to complete your slow-crafted order.</p>
+<div class="checkout-grid">
+<!-- Left Column: Checkout Forms -->
+<div class="checkout-form-stack">
+<!-- 01 Contact Information -->
+<section class="checkout-card">
+<div class="card-header">
+<div class="card-title-group">
+<span class="step-number">01</span>
+<h2 class="card-title">Contact Information</h2>
+</div>
+<span class="material-symbols-outlined" style="color: var(--text-muted); font-size: 20px;">badge</span>
+</div>
+<div class="form-row-2">
+<div class="form-group">
+<label class="form-label" for="first-name">First Name</label>
+<input class="input-field" id="first-name" placeholder="First Name" type="text" value="">
+</div>
+<div class="form-group">
+<label class="form-label" for="last-name">Last Name</label>
+<input class="input-field" id="last-name" placeholder="Last Name" type="text" value="">
+</div>
+</div>
+<div class="form-group">
+<label class="form-label" for="email">Email for Order Confirmation</label>
+<input class="input-field" id="email" placeholder="name@example.com" type="email" value="">
+</div>
+<div class="form-group">
+<label class="form-label" for="phone">Mobile Number (SMS Notification)</label>
+<div class="phone-input-wrap">
+<span class="phone-prefix">+1</span>
+<input class="input-field" id="phone" placeholder="Phone number" type="tel" value="">
+</div>
+</div>
+</section>
+<!-- 02 Pickup Time Selection Pills -->
+<section class="checkout-card">
+<div class="card-header">
+<div class="card-title-group">
+<span class="step-number">02</span>
+<h2 class="card-title">Pickup Time</h2>
+</div>
+<span class="header-tag">Freshly Prepared</span>
+</div>
+<div class="pickup-grid" id="pickup-pill-group">
+<div class="pickup-pill active" onclick="selectPickupPill(this)">
+<div class="pill-top">
+<span class="pill-title">ASAP</span>
+<span class="pill-radio-custom"></span>
+</div>
+<span class="pill-timing">15–20 mins</span>
+<span class="pill-desc">Brewing priority queue</span>
+</div>
+<div class="pickup-pill" onclick="selectPickupPill(this)">
+<div class="pill-top">
+<span class="pill-title">In 30 min</span>
+<span class="pill-radio-custom"></span>
+</div>
+<span class="pill-timing">~11:45 AM</span>
+<span class="pill-desc">Timed extraction</span>
+</div>
+<div class="pickup-pill" onclick="selectPickupPill(this)">
+<div class="pill-top">
+<span class="pill-title">In 1 hour</span>
+<span class="pill-radio-custom"></span>
+</div>
+<span class="pill-timing">~12:15 PM</span>
+<span class="pill-desc">Freshly warmed bake</span>
+</div>
+</div>
+</section>
+<!-- 03 Payment Details -->
+<section class="checkout-card">
+<div class="card-header">
+<div class="card-title-group">
+<span class="step-number">03</span>
+<h2 class="card-title">Payment Details</h2>
+</div>
+<span class="header-tag">
+<span class="material-symbols-outlined" style="font-size: 16px;">lock</span>
+              256-bit Encrypted
+            </span>
+</div>
+<div class="form-group">
+<label class="form-label" for="card-name">Name on Card</label>
+<input class="input-field" id="card-name" placeholder="Name on card" type="text" value="">
+</div>
+<div class="form-group">
+<label class="form-label" for="card-number">Card Number</label>
+<div class="card-num-wrap">
+<input class="input-field" id="card-number" placeholder="•••• •••• •••• ••••" type="text" value="">
+<span class="material-symbols-outlined card-icon">credit_card</span>
+</div>
+</div>
+<div class="form-row-2">
+<div class="form-group">
+<label class="form-label" for="card-expiry">Expiry Date</label>
+<input class="input-field" id="card-expiry" placeholder="MM/YY" type="text" value="08/28">
+</div>
+<div class="form-group">
+<div style="display: flex; justify-content: space-between; align-items: baseline;">
+<label class="form-label" for="card-cvv">CVV / CVC</label>
+<span style="font-size: 10px; color: var(--text-light);" class="">3 digits on back</span>
+</div>
+<input class="input-field" id="card-cvv" placeholder="CVV" type="password" value="">
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary -->
+<aside class="summary-card">
+<span class="summary-eyebrow">Your Basket</span>
+<div class="summary-header-row">
+<h3 class="card-title">Order Summary</h3>
+<span class="items-count-badge">3 Items</span>
+</div>
+<!-- Pickup Location Banner -->
+<div class="location-card">
+<span class="material-symbols-outlined location-icon">pin_drop</span>
+<div class="location-info">
+<span style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 600;" class="">Pickup At</span>
+<h4 class="">Apollo Sindoori Pavilion</h4>
+<p class="">📍 42 Artisan Way, Slow Roasters Quarter</p>
+</div>
+</div>
+<!-- Itemized List -->
+<div class="ordered-items-list">
+<div class="cart-item-row">
+<img alt="Paneer Paratha" class="cart-item-thumb" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPDza3a93XnluUOHf4wIdJAlnladKTo682RBIrt0DFm_nEfmLjLiJDhO04vVZirl3Ad7GH4ie0DjJMJV3z5qtD8kBJ0AZEaznBvs43DW0Ro2g38SXCAtmAfjFGYl8yoxfqFZyi9oWTCjpxuyRPmccwBa9ysERUHoDhJxGxBAuyLReLLp_m4dy9LrNBf6e9WdSDD8DSlEhailrFSF2D9dSOKicngwsNKY46YlYW5U2aOq_H6WOmkF9J-Q">
+<div class="cart-item-details">
+<div class="cart-item-heading">
+<span class="">Paneer Paratha</span>
+<span class="">₹104.00</span>
+</div>
+<p class="cart-item-meta">Qty: 2 • Tandoor Warm, ₹52 each</p>
+</div>
+</div>
+<div class="cart-item-row">
+<img alt="Masala Dosa" class="cart-item-thumb" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgF3hnyx5j94HhXDky7OsMUck6IjM3PX0KgTPzMt8h8fblXnaR0j-dAtm3S0B-9tYoSH0X38CtDYNmiHsF8hQVKzv8jG5VCjv8NpRz9inl2rrwLD53MmVGE8b7-cSjbAvbjRogjeK68rjRKH1Kr5rhdMkFkZK4WTjB-X6tK1_BELKdKJI2StayrC4vvoghkTppei-leUJl28UxX_29yG4GyeltgPLQJEFINojcxx-zyNBwQjoFqBIV_w">
+<div class="cart-item-details">
+<div class="cart-item-heading">
+<span class="">Masala Dosa</span>
+<span class="">₹63.00</span>
+</div>
+<p class="cart-item-meta">Qty: 1 • Crispy Hot</p>
+</div>
+</div>
+<div class="cart-item-row">
+<img alt="Idli Sambhar" class="cart-item-thumb" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW3hzDbuI9pS1YEMqDiHn3hLT-Pq4O8N2VWzBWE6RPREAV0miJHYYlLib-SysKFJHo3x5XZQbofEt_EwMyy_QUIjaojvztboDbfF_tS7gPHVG-U7CDz2u1KTESk93rp1-lmXKFUbos8UCLNwSUBHkoZu0DSRAZcOTGaEjKHlDv4YVQko5Cr_K5uxSgKZFHnov5HKFFkZIxW9Ft5ci85MNJMt8MNV9qKDtluWNqfcULyXrOkw0CAKML6Q">
+<div class="cart-item-details">
+<div class="cart-item-heading">
+<span class="">Idli Sambhar (2 pcs)</span>
+<span class="">₹47.00</span>
+</div>
+<p class="cart-item-meta">Qty: 1 • Steamed &amp; Fresh</p>
+</div>
+</div>
+</div>
+<!-- Calculations -->
+<div class="totals-breakdown">
+<div class="totals-line">
+<span class="">Subtotal</span>
+<span class="value">₹214.00</span>
+</div>
+<div class="totals-line">
+<span class="">Estimated Tax (5% GST)</span>
+<span class="value">₹10.70</span>
+</div>
+<div class="totals-line free-tag">
+<span style="display: inline-flex; align-items: center; gap: 4px;" class="">
+              Pickup Fee
+              <span class="material-symbols-outlined" style="font-size: 15px;">eco</span>
+</span>
+<span class="value">Free</span>
+</div>
+<div class="total-amount-box">
+<div class="total-title-col">
+<span class="total-label">Total Amount</span>
+<span class="total-note">Includes all taxes and packaging</span>
+</div>
+<span class="total-price">₹224.70</span>
+</div>
+</div>
+<!-- Action CTA -->
+<button class="btn-place-order" id="orderBtn" onclick="handlePlaceOrder()" type="button">
+<span class="material-symbols-outlined" style="font-size: 20px;">shopping_bag</span>
+          Place Order — ₹224.70
+        </button>
+<p class="order-note">By confirming, you agree to slow-crafted pickup turnaround times.</p>
+<div class="order-success-msg" id="orderSuccess">
+          ✓ Order Placed! Ready in 15–20 minutes at Apollo Sindoori Pavilion.
+        </div>
+</aside>
+</div>
+</main>
+<!-- Clean Single-Line Footer -->
+<footer class="site-footer">
+<div class="footer-container">
+<p class="">© 2025 Sketch Cafe by Apollo Sindoori. All rights reserved.</p>
+<p class="footer-eyebrow">Artisanal Dining &amp; Slow Brews</p>
+</div>
+</footer>
+<script>
+    function selectPickupPill(element) {
+      const pills = document.querySelectorAll('#pickup-pill-group .pickup-pill');
+      pills.forEach(pill => pill.classList.remove('active'));
+      element.classList.add('active');
+    }
+
+    function handlePlaceOrder() {
+      const btn = document.getElementById('orderBtn');
+      const successMsg = document.getElementById('orderSuccess');
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      btn.innerText = 'Processing Order...';
+
+      setTimeout(() => {
+        btn.innerText = '✓ Order Confirmed';
+        btn.style.backgroundColor = '#8b4c1d';
+        successMsg.style.display = 'block';
+      }, 700);
+    }
+  </script>
+
+
+</body></html>

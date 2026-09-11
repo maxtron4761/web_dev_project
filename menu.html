@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>The Sketch Menu — Sketch Cafe by Apollo Sindoori</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="menu.css">
+</head>
+<body>
+<!-- FIXED TOP NAVIGATION -->
+<header class="header-nav" style="position: sticky; top: 0px; z-index: 100;">
+<div class="header-container">
+<!-- Brand Identity -->
+<a class="brand-group" href="#">
+<div class="brand-avatar">
+<img alt="Sketch Cafe Logo" src="https://lh3.googleusercontent.com/aida/AEtjO1W2pBj63S0D6tNJ1VXd57rucNzronAxk6tZQMhgO76j7poVvkHvsp05YX0ozlqYHsRjXOmq6wIlMYKqOQ4ARQGZCSOQX1HleLB8_-6C5iBEEB1ZreKhcKy9FYxhiDUA-g1353EaUCoQpaDUTHDv9EqJJYqNqrNcgW1Oo5eodNEGrTLvErPbGPWPG56KrpzYr-Fe53eFzsYaDvsc7h21fXZjUlCcGPc5Yg4pp3k7SQYcUFyKOi6yMTuJbTsV">
+</div>
+<div class="brand-text">
+<span class="brand-title">SKETCH <span class="">cafe</span></span>
+<span class="brand-subtitle">by Apollo Sindoori</span>
+</div>
+</a>
+<!-- Center Navigation Links (Home, Menu active, Contact only) -->
+<nav aria-label="Main Navigation" class="nav-links-wrap">
+<a class="nav-link" href="#">Home</a>
+<a aria-current="page" class="nav-link active" href="#">Menu</a>
+<a class="nav-link" href="#">Contact</a>
+</nav>
+<!-- Right Action Items: Cart & Table Reservation -->
+<div class="header-actions">
+<div class="cart-pill" title="Current order items">
+<span class="material-symbols-outlined" style="font-size: 18px;">shopping_bag</span>
+<span class="">Cart</span>
+<span class="cart-count-badge">0</span>
+</div>
+<a class="btn-reserve" href="#">Reserve Table</a>
+</div>
+</div>
+</header>
+<main>
+<!-- HERO INTRO & CATEGORY FILTER -->
+<section class="hero-section" style="padding-top: 48px; padding-bottom: 32px;">
+<div class="hero-glow"></div>
+<div class="hero-content">
+<div class="hero-badge">
+<span class="badge-dot"></span>
+<span class="">Delicious by Sketch Café</span>
+</div>
+<h1 class="hero-title">The Sketch <em>Menu</em></h1>
+<div class="hero-flourish">
+<span class="flourish-line"></span>
+<span class="flourish-star">✦</span>
+<span class="flourish-line"></span>
+</div>
+<p class="hero-description">
+          Crafted with passion, roasted with precision. Each harvest roasted small-batch, ground per order, and plated with European patisserie poise.
+        </p>
+<!-- Category Filter Tabs -->
+<div class="filter-container">
+<div class="filter-pill-wrap" role="tablist">
+<button aria-selected="true" class="tab-btn active" data-category="all" role="tab">All Items</button>
+<button aria-selected="false" class="tab-btn" data-category="paratha" role="tab">Paratha Specials</button>
+<button aria-selected="false" class="tab-btn" data-category="south" role="tab">South Indian Specials</button>
+<button aria-selected="false" class="tab-btn" data-category="north" role="tab">North Indian Favourites</button>
+</div>
+</div>
+</div>
+</section>
+<!-- MENU LEDGER CONTENT -->
+<section class="menu-ledger-section">
+<div class="menu-layout">
+<!-- LEFT COLUMN -->
+<div class="menu-column">
+<!-- 1. Paratha Specials (08:00am - 11:00am) -->
+<article class="menu-card" data-category-type="paratha">
+<header class="menu-header">
+<div>
+<span class="timing-badge">08:00am – 11:00am</span>
+<h2 class="card-title">Paratha Specials</h2>
+</div>
+<div class="icon-badge">
+<span class="material-symbols-outlined">breakfast_dining</span>
+</div>
+</header>
+<div class="items-list">
+<div class="menu-item-row">
+<span class="item-name">Stuffed Paratha</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>35.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Paneer Paratha</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>52.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Egg Paratha</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>45.00</span>
+</div>
+</div>
+</article>
+<!-- 2. South Indian Specials (08:00am - 09:30pm) -->
+<article class="menu-card" data-category-type="south">
+<header class="menu-header">
+<div>
+<span class="timing-badge">08:00am – 09:30pm</span>
+<h2 class="card-title">South Indian Specials</h2>
+</div>
+<div class="icon-badge">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+</header>
+<div class="items-list">
+<div class="menu-item-row">
+<span class="item-name">Idli Sambhar (2 pcs)</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>47.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Medu Vada Sambhar (2 pcs)</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>47.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Masala Dosa</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>63.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Mysore Masala Dosa</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>78.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Cheese Masala Dosa</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>85.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Paneer Dosa</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>78.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Onion Uttapam</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>63.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Cheese Uttapam</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>78.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Chole Bhature</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>63.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Poori Bhaji (4 Pcs)</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>52.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Bread Omelette</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>47.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Boiled Egg (2 pcs)</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>21.00</span>
+</div>
+</div>
+</article>
+</div>
+<!-- RIGHT COLUMN -->
+<div class="menu-column">
+<!-- 3. North Indian Favourites (12:30pm - 02:30pm & 07:30pm to 09:30pm) -->
+<article class="menu-card" data-category-type="north">
+<header class="menu-header">
+<div>
+<span class="timing-badge">12:30pm – 02:30pm &amp; 07:30pm – 09:30pm</span>
+<h2 class="card-title">North Indian Favourites</h2>
+</div>
+<div class="icon-badge">
+<span class="material-symbols-outlined">dinner_dining</span>
+</div>
+</header>
+<div class="items-list">
+<div class="menu-item-row">
+<span class="item-name">Rice Combo</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>55.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Chapati Combo</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>55.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Egg Curry with Rice/Chapati</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>78.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Chicken Curry with Rice/Chapati</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>155.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Chicken Curry</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>120.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Egg Curry</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>47.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">North Indian Thali</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>84.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Fish Curry Combo</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>170.00</span>
+</div>
+<div class="menu-item-row">
+<span class="item-name">Mutton Curry Combo</span>
+<span class="item-leader-dots"></span>
+<span class="item-price"><span class="currency">₹</span>195.00</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<!-- CLEAN POLISHED FOOTER -->
+<footer class="site-footer">
+<div class="footer-content">
+<div class="footer-brand">SKETCH CAFE</div>
+<p class="">© 2025 Sketch Cafe by Apollo Sindoori. All culinary rights reserved.</p>
+</div>
+</footer>
+<!-- SIMPLE FILTER SCRIPT -->
+<script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const cards = document.querySelectorAll('.menu-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        const filterCategory = tab.getAttribute('data-category');
+        cards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category-type');
+          if (filterCategory === 'all' || cardCategory === filterCategory) {
+            card.classList.remove('hidden-card');
+          } else {
+            card.classList.add('hidden-card');
+          }
+        });
+      });
+    });
+  </script>
+
+
+</body></html>

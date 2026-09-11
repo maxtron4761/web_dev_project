@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Cart | Sketch Cafe by Apollo Sindoori</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="cart.css">
+</head>
+<body>
+<!-- Navigation Header (Strictly: Home, Menu, Contact, Cart, Reserve Table) -->
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" data-path="home" href="#">
+<span class="brand-title">☕ Sketch Cafe</span>
+<span class="brand-sub">Sketch Cafe by Apollo Sindoori</span>
+</a>
+<nav class="nav-links">
+<a class="nav-link" data-path="home" href="#">Home</a>
+<a class="nav-link" data-path="menu" href="#">Menu</a>
+<a class="nav-link" data-path="contact" href="#">Contact</a>
+</nav>
+<div class="nav-actions">
+<a aria-label="View Shopping Cart" class="cart-btn" data-path="cart" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="cart-badge" id="nav-cart-count">4</span>
+</a>
+<a class="btn-reserve" data-path="reserve-table" href="#">Reserve Table</a>
+<div aria-label="User Profile" class="user-avatar">
+<span class="material-symbols-outlined" style="font-size: 20px;">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Cart Section -->
+<main class="main-wrapper">
+<!-- Editorial Headline -->
+<header class="editorial-header">
+<div>
+<span class="header-tag">Artisanal Table Orders</span>
+<h1 class="page-title">Your Cart</h1>
+</div>
+<div class="cart-indicator">
+<span class="status-dot"></span>
+<span id="cart-item-count-label">4 items in your cart</span>
+</div>
+</header>
+<!-- Main Grid: Cart Items & Ledger -->
+<div class="cart-grid">
+<!-- Item List -->
+<section aria-label="Order Items" class="cart-list">
+<!-- Item 1: Paneer Paratha (₹52.00, qty 2 = ₹104.00) -->
+<article class="cart-item" id="item-paneer-paratha">
+<div class="item-info-group">
+<div class="item-icon-box">🫓</div>
+<div class="item-details">
+<div class="item-header-line">
+<h2 class="item-name">Paneer Paratha</h2>
+<span class="item-tag">Tandoor Warm</span>
+</div>
+<p class="item-desc">Spiced cottage cheese stuffed flatbread served with fresh curd</p>
+</div>
+</div>
+<div class="item-controls-group">
+<div class="stepper">
+<button aria-label="Decrease Paneer Paratha" class="stepper-btn" onclick="updateQty('paratha', -1, 52.00)">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="stepper-value" id="qty-paratha">2</span>
+<button aria-label="Increase Paneer Paratha" class="stepper-btn" onclick="updateQty('paratha', 1, 52.00)">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="item-price-block">
+<span class="line-price" id="price-paratha">₹104.00</span>
+<span class="unit-price">₹52.00 ea</span>
+</div>
+<button aria-label="Remove Paneer Paratha" class="btn-remove" onclick="removeCartItem('item-paneer-paratha', 'paratha')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</article>
+<!-- Item 2: Masala Dosa (₹63.00, qty 1 = ₹63.00) -->
+<article class="cart-item" id="item-masala-dosa">
+<div class="item-info-group">
+<div class="item-icon-box">🥞</div>
+<div class="item-details">
+<div class="item-header-line">
+<h2 class="item-name">Masala Dosa</h2>
+<span class="item-tag">Crispy Hot</span>
+</div>
+<p class="item-desc">Crisp golden crepe filled with tempered spiced potato mash &amp; chutneys</p>
+</div>
+</div>
+<div class="item-controls-group">
+<div class="stepper">
+<button aria-label="Decrease Masala Dosa" class="stepper-btn" onclick="updateQty('dosa', -1, 63.00)">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="stepper-value" id="qty-dosa">1</span>
+<button aria-label="Increase Masala Dosa" class="stepper-btn" onclick="updateQty('dosa', 1, 63.00)">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="item-price-block">
+<span class="line-price" id="price-dosa">₹63.00</span>
+<span class="unit-price">₹63.00 ea</span>
+</div>
+<button aria-label="Remove Masala Dosa" class="btn-remove" onclick="removeCartItem('item-masala-dosa', 'dosa')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</article>
+<!-- Item 3: Idli Sambhar (2 pcs) (₹47.00, qty 1 = ₹47.00) -->
+<article class="cart-item" id="item-idli-sambhar">
+<div class="item-info-group">
+<div class="item-icon-box">⚪</div>
+<div class="item-details">
+<div class="item-header-line">
+<h2 class="item-name">Idli Sambhar (2 pcs)</h2>
+<span class="item-tag">Steamed</span>
+</div>
+<p class="item-desc">Steamed fluffy rice cakes paired with aromatic lentil stew &amp; coconut chutney</p>
+</div>
+</div>
+<div class="item-controls-group">
+<div class="stepper">
+<button aria-label="Decrease Idli Sambhar" class="stepper-btn" onclick="updateQty('idli', -1, 47.00)">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="stepper-value" id="qty-idli">1</span>
+<button aria-label="Increase Idli Sambhar" class="stepper-btn" onclick="updateQty('idli', 1, 47.00)">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="item-price-block">
+<span class="line-price" id="price-idli">₹47.00</span>
+<span class="unit-price">₹47.00 ea</span>
+</div>
+<button aria-label="Remove Idli Sambhar" class="btn-remove" onclick="removeCartItem('item-idli-sambhar', 'idli')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</article>
+<!-- Return to menu action -->
+<div class="cart-actions-bar">
+<a class="btn-continue" data-path="menu" href="#">
+<span class="material-symbols-outlined">west</span>
+<span>Continue Shopping</span>
+</a>
+<span class="fresh-note">
+<span class="material-symbols-outlined" style="font-size: 16px; color: var(--color-primary-dark);">eco</span>
+            Freshly prepared upon table confirmation
+          </span>
+</div>
+</section>
+<!-- Order Summary Card -->
+<aside aria-label="Order Summary" class="summary-card">
+<div class="summary-header">
+<h2 class="summary-title">Order Summary</h2>
+<span class="summary-tag">Tasting Bill</span>
+</div>
+<!-- Coupon Input -->
+<div class="coupon-box">
+<label class="coupon-label" for="voucher-code">Voucher or Membership Code</label>
+<div class="coupon-input-group">
+<input class="coupon-input" id="voucher-code" placeholder="e.g. SKETCHSLOW" type="text"/>
+<button class="coupon-btn" onclick="handleCoupon()">Apply</button>
+</div>
+<p class="coupon-msg" id="voucher-msg"></p>
+</div>
+<!-- Ledger Calculation -->
+<div class="financial-ledger">
+<div class="ledger-row">
+<span>Subtotal</span>
+<span class="ledger-val" id="summary-subtotal">₹214.00</span>
+</div>
+<div class="ledger-row">
+<div>
+<span>Tax</span>
+<span class="gst-tag">5% GST</span>
+</div>
+<span class="ledger-val" id="summary-tax">₹10.70</span>
+</div>
+<div class="ledger-row discount-row" id="discount-row">
+<span>Member Discount (15%)</span>
+<span class="ledger-val" id="summary-discount">-₹0.00</span>
+</div>
+</div>
+<!-- Highlighted Total -->
+<div class="total-box">
+<div class="total-meta">
+<div class="total-heading">Total</div>
+<span class="total-sub">Including all local hospitality taxes</span>
+</div>
+<div class="total-amount" id="summary-total">₹224.70</div>
+</div>
+<!-- Proceed to Payment CTA -->
+<a class="btn-checkout" data-path="checkout" href="#">
+<span>Proceed to Payment</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<!-- Trust Badges -->
+<div class="trust-grid">
+<div class="trust-item">
+<span class="material-symbols-outlined">security</span>
+<span>Encrypted Checkout</span>
+</div>
+<div class="trust-item">
+<span class="material-symbols-outlined">table_restaurant</span>
+<span>Dine-in or Takeaway</span>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Semantic Footer (No About or Gallery links) -->
+<footer class="site-footer">
+<div class="footer-inner">
+<p>© 2025 Sketch Cafe by Apollo Sindoori. All rights reserved.</p>
+<p class="footer-tagline">Artisanal Dining &amp; Slow Brews</p>
+</div>
+</footer>
+<!-- Vanilla Cart Interaction Script -->
+<script>
+    (function() {
+      const cartItems = {
+        paratha: { qty: 2, price: 52.00 },
+        dosa: { qty: 1, price: 63.00 },
+        idli: { qty: 1, price: 47.00 }
+      };
+
+      let discountRate = 0;
+
+      function updateSummary() {
+        let subtotal = 0;
+        let totalCount = 0;
+
+        for (const key in cartItems) {
+          if (cartItems[key]) {
+            subtotal += cartItems[key].qty * cartItems[key].price;
+            totalCount += cartItems[key].qty;
+          }
+        }
+
+        const countLabel = document.getElementById('cart-item-count-label');
+        const navCount = document.getElementById('nav-cart-count');
+        if (countLabel) {
+          countLabel.textContent = totalCount === 1 ? '1 item in your cart' : totalCount + ' items in your cart';
+        }
+        if (navCount) {
+          navCount.textContent = totalCount;
+        }
+
+        const discount = subtotal * discountRate;
+        const discountedSubtotal = Math.max(0, subtotal - discount);
+        const tax = discountedSubtotal * 0.05;
+        const total = discountedSubtotal + tax;
+
+        const subtotalEl = document.getElementById('summary-subtotal');
+        const taxEl = document.getElementById('summary-tax');
+        const totalEl = document.getElementById('summary-total');
+        const discountRow = document.getElementById('discount-row');
+        const discountVal = document.getElementById('summary-discount');
+
+        if (subtotalEl) subtotalEl.textContent = '₹' + subtotal.toFixed(2);
+        if (taxEl) taxEl.textContent = '₹' + tax.toFixed(2);
+        if (totalEl) totalEl.textContent = '₹' + total.toFixed(2);
+
+        if (discountRow && discountVal) {
+          if (discountRate > 0) {
+            discountRow.style.display = 'flex';
+            discountVal.textContent = '-₹' + discount.toFixed(2);
+          } else {
+            discountRow.style.display = 'none';
+          }
+        }
+      }
+
+      window.updateQty = function(itemKey, change, unitPrice) {
+        if (!cartItems[itemKey]) return;
+        const nextQty = cartItems[itemKey].qty + change;
+        if (nextQty <= 0) {
+          window.removeCartItem('item-' + (itemKey === 'paratha' ? 'paneer-paratha' : (itemKey === 'dosa' ? 'masala-dosa' : 'idli-sambhar')), itemKey);
+          return;
+        }
+        cartItems[itemKey].qty = nextQty;
+
+        const qtyEl = document.getElementById('qty-' + itemKey);
+        const priceEl = document.getElementById('price-' + itemKey);
+
+        if (qtyEl) qtyEl.textContent = nextQty;
+        if (priceEl) priceEl.textContent = '₹' + (nextQty * unitPrice).toFixed(2);
+
+        updateSummary();
+      };
+
+      window.removeCartItem = function(elementId, itemKey) {
+        const row = document.getElementById(elementId);
+        if (row) {
+          row.style.opacity = '0';
+          row.style.transform = 'scale(0.97)';
+          setTimeout(function() {
+            row.remove();
+            delete cartItems[itemKey];
+            updateSummary();
+          }, 180);
+        }
+      };
+
+      window.handleCoupon = function() {
+        const input = document.getElementById('voucher-code');
+        const msg = document.getElementById('voucher-msg');
+        if (!input || !msg) return;
+
+        const val = input.value.trim().toUpperCase();
+        if (val === 'SKETCHSLOW' || val === 'APOLLO') {
+          discountRate = 0.15;
+          msg.textContent = '15% artisanal club discount applied!';
+          msg.className = 'coupon-msg active';
+        } else if (val.length > 0) {
+          discountRate = 0;
+          msg.textContent = 'Invalid or expired voucher code.';
+          msg.className = 'coupon-msg error';
+        } else {
+          discountRate = 0;
+          msg.className = 'coupon-msg';
+        }
+        updateSummary();
+      };
+    })();
+  </script>
+</body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact &amp; Reservations — Sketch Cafe</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="contact.css">
+</head>
+<body>
+<!-- Navigation Header -->
+<header class="site-header">
+<div class="nav-container">
+<a class="brand-group" href="#">
+<div class="brand-title-wrap">
+<span class="brand-dot"></span>
+<span class="brand-title">Sketch Cafe</span>
+</div>
+<span class="brand-sub">SKETCH CAFE BY APOLLO SINDOORI</span>
+</a>
+<nav class="nav-links">
+<a class="nav-link" href="#">Home</a>
+<a class="nav-link" href="#">Menu</a>
+<a class="nav-link active" href="#">Contact</a>
+</nav>
+<div class="header-actions">
+<a aria-label="View Cart" class="cart-btn" href="#">
+<!-- Bag Icon -->
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20">
+<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2Z"></path>
+<path d="M3 6h18"></path>
+<path d="M16 10a4 4 0 0 1-8 0"></path>
+</svg>
+<span class="cart-badge">2</span>
+</a>
+<a class="btn-reserve-nav" href="#reservation-form">Reserve<br/>Table</a>
+<div class="user-avatar" title="Account">
+<!-- Person Icon -->
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main>
+<div class="content-wrapper">
+<!-- Page Heading -->
+<section class="page-intro">
+<div class="eyebrow">
+<span class="eyebrow-dot"></span>
+<span>SLOW ROASTED HOSPITALITY</span>
+</div>
+<h1 class="page-title">Contact &amp; Reservations</h1>
+<p class="page-subtitle">Pencil in a quiet table, organize an intimate gathering, or write to our baristas and pastry chefs.</p>
+</section>
+<!-- Two-Column Layout -->
+<div class="contact-grid">
+<!-- Left Column: Form Card -->
+<div class="card" id="reservation-form">
+<div class="card-header">
+<div class="card-header-inner">
+<span class="step-badge">01</span>
+<h2 class="card-title">Book a Table / Send a Message</h2>
+</div>
+<!-- Chair / Table symbol -->
+<svg class="header-icon-svg" viewbox="0 0 24 24">
+<path d="M4 18v3"></path>
+<path d="M20 18v3"></path>
+<path d="M4 11h16"></path>
+<path d="M12 4v7"></path>
+<path d="M8 4h8"></path>
+</svg>
+</div>
+<form onsubmit="handleFormSubmit(event)">
+<div class="form-grid">
+<!-- Email Address -->
+<div class="form-group">
+<label class="form-label" for="contact-email">Email Address *</label>
+<input class="input-field" id="contact-email" placeholder="your.name@example.com" required="" type="email"/>
+</div>
+<!-- Party Size -->
+<div class="form-group">
+<label class="form-label" for="contact-guests">Party Size</label>
+<select class="select-field" id="contact-guests">
+<option value="1">1 Person (Solo Creative Table)</option>
+<option selected="" value="2">2 Guests (Intimate Nook)</option>
+<option value="3-4">3 – 4 Guests (Standard Dining)</option>
+<option value="5-6">5 – 6 Guests (Curator's Booth)</option>
+<option value="7+">7+ Guests (Private Salon Loft)</option>
+</select>
+</div>
+<!-- Seating Window -->
+<div class="form-group">
+<label class="form-label" for="contact-time">Seating Window</label>
+<select class="select-field" id="contact-time">
+<option value="morning">Morning Brew &amp; Flaky Bakes (8:00 AM – 11:30 AM)</option>
+<option selected="" value="lunch">Midday &amp; Paratha Specials (12:00 PM – 3:00 PM)</option>
+<option value="tea">Afternoon Coffee &amp; Patisserie (3:30 PM – 6:00 PM)</option>
+<option value="evening">Twilight Roast &amp; Slow Brews (6:30 PM – 9:30 PM)</option>
+</select>
+</div>
+<!-- Notes / Special Requests -->
+<div class="form-group">
+<label class="form-label" for="contact-message">Notes &amp; Special Requests</label>
+<textarea class="textarea-field" id="contact-message" placeholder="Mention preferred seating (window nook, quiet garden terrace), dietary notes (oat milk, gluten-free), or special celebrations..."></textarea>
+</div>
+<!-- Submit & Assurance -->
+<div class="form-actions">
+<button class="btn-submit" id="submit-btn" type="submit">
+<span>Reserve Table &amp; Send Inquiry</span>
+<span aria-hidden="true">→</span>
+</button>
+<div class="form-assurance">
+<!-- Checkmark icon -->
+<svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="color: var(--accent-terracotta);" viewbox="0 0 24 24" width="15">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="m9 12 2 2 4-4"></path>
+</svg>
+<span>Instant confirmation via SMS &amp; email. No reservation fee.</span>
+</div>
+</div>
+<!-- Success Alert Toast -->
+<div class="status-toast" id="status-toast">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+<path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+<line x1="6" x2="6" y1="1" y2="4"></line>
+<line x1="10" x2="10" y1="1" y2="4"></line>
+<line x1="14" x2="14" y1="1" y2="4"></line>
+</svg>
+<span>Thank you! Your inquiry has been penciled into our slow-brew schedule. We will reach out shortly.</span>
+</div>
+</div>
+</form>
+</div>
+<!-- Right Column: Location & Atelier Dossier -->
+<div class="card info-card">
+<div class="card-header" style="margin-bottom: 6px;">
+<div class="card-header-inner">
+<span class="step-badge">02</span>
+<h2 class="card-title">Atelier Location &amp; Hours</h2>
+</div>
+<!-- Storefront Icon -->
+<svg class="header-icon-svg" viewbox="0 0 24 24">
+<path d="M3 9 5 3h14l2 6"></path>
+<path d="M21 9v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9"></path>
+<path d="M9 21V12h6v9"></path>
+</svg>
+</div>
+<!-- Sanctuary Address -->
+<div class="info-block">
+<div class="info-icon-box">
+<svg class="info-icon-svg" viewbox="0 0 24 24">
+<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+<circle cx="12" cy="10" r="3"></circle>
+</svg>
+</div>
+<div class="info-content">
+<div class="info-label">Sanctuary Address</div>
+<p class="info-headline">Apollo Sindoori Pavilion</p>
+<p class="info-sub">42 Artisan Way, Slow Roasters Quarter</p>
+<p class="info-sub" style="font-size: 12.5px; margin-top: 3px; color: var(--accent-terracotta);">Corner of West Colonnade &amp; Gallery Walk</p>
+</div>
+</div>
+<!-- Opening Hours -->
+<div class="info-block">
+<div class="info-icon-box">
+<svg class="info-icon-svg" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+</div>
+<div class="info-content">
+<div class="info-label">Brewing &amp; Dining Hours</div>
+<p class="info-headline">Mon – Sun: 7:00 AM – 10:00 PM</p>
+<p class="info-sub">Breakfast, Paratha Specials &amp; All-Day Hand Brews</p>
+<p class="info-sub" style="font-size: 12.5px; margin-top: 3px;">Warm bakes &amp; patisserie counter opens at 7:30 AM</p>
+</div>
+</div>
+<div class="divider"></div>
+<!-- Direct Channels -->
+<div class="info-block">
+<div class="info-icon-box">
+<svg class="info-icon-svg" viewbox="0 0 24 24">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+</svg>
+</div>
+<div class="info-content">
+<div class="info-label">Direct Inquiries</div>
+<p class="info-sub" style="margin-bottom: 3px;">
+<strong>Phone:</strong> <a class="info-link" href="tel:+18005550199">+1 (800) 555-0199</a>
+</p>
+<p class="info-sub">
+<strong>Email:</strong> <a class="info-link" href="mailto:hello@sketchcafe.com">hello@sketchcafe.com</a>
+</p>
+</div>
+</div>
+<!-- Roastery Quote Note -->
+<div class="roastery-note">
+<div class="roastery-quote-icon">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22">
+<path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+<path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+<line x1="6" x2="6" y1="1" y2="4"></line>
+<line x1="10" x2="10" y1="1" y2="4"></line>
+<line x1="14" x2="14" y1="1" y2="4"></line>
+</svg>
+</div>
+<p class="roastery-note-text">"Coffee is an ongoing sketch of aromas and conversations. Every cup is brewed with precision and patience."</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Clean Minimal 1-Line Footer -->
+<footer class="site-footer">
+<div class="footer-container">
+<p>© 2025 Sketch Cafe by Apollo Sindoori. All rights reserved.</p>
+<p class="footer-highlight">ARTISANAL DINING &amp; SLOW BREWS</p>
+</div>
+</footer>
+<!-- Vanilla JS Interaction Logic -->
+<script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const submitBtn = document.getElementById('submit-btn');
+      const toast = document.getElementById('status-toast');
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Penciling in reservation...</span>';
+
+      setTimeout(function() {
+        submitBtn.innerHTML = '<span>Reservation Confirmed ✓</span>';
+        submitBtn.style.backgroundColor = '#a86332';
+        toast.style.display = 'flex';
+      }, 600);
+    }
+  </script>
+</body></html>
