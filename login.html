@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Sketch Cafe</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="brand-group">
+      <div class="brand-title">
+        <span class="brand-dot"></span>
+        Sketch Cafe
+      </div>
+      <span class="brand-sub">Sketch Cafe by Apollo Sindoori</span>
+    </a>
+
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="menu.html" class="nav-link">Menu</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="cart.html" class="cart-btn" title="Cart">🛒</a>
+      <a href="contact.html" class="reserve-btn">Reserve Table</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="auth-wrapper">
+      <div class="auth-header">
+        <span class="auth-badge">Account Portal</span>
+        <h1 class="auth-title">Welcome</h1>
+        <p class="auth-subtitle">Sign in to manage reservations and orders</p>
+      </div>
+
+      <div class="auth-card">
+        <form id="loginForm" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label for="email" class="">Email Address</label>
+            <div class="input-wrapper">
+              <input type="email" id="email" class="form-input" placeholder="name@example.com" required="" autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="">Password</label>
+            <div class="input-wrapper">
+              <input type="password" id="password" class="form-input" placeholder="Enter your password" required="" autocomplete="current-password">
+            </div>
+          </div>
+
+          <div class="form-meta">
+            <label class="remember-group">
+              <input type="checkbox" id="rememberMe">
+              <span class="">Remember me</span>
+            </label>
+            <a href="#" class="forgot-link" onclick="event.preventDefault(); alert('Password reset link will be sent to your email.');">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span class="">Sign In</span>
+            <span class="">→</span>
+          </button>
+        </form>
+
+        <div class="auth-footer-prompt">
+          Don't have an account? <a href="#" onclick="event.preventDefault(); alert('Registration is open at checkout or by placing a table reservation.');" class="">Sign up</a>
+        </div>
+      </div>
+
+      <div class="quick-links">
+        <a href="index.html" class="back-home">← Return to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      if (email) {
+        alert('Welcome back! Redirecting to Sketch Cafe...');
+        window.location.href = 'index.html';
+      }
+    }
+  </script>
+
+
+
+</body></html>
